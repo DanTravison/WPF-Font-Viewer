@@ -1,0 +1,21 @@
+﻿<Application x:Class="FontViewer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:clr="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+		
+		<clr:Double x:Key="DefaultFontSize">24</clr:Double>
+
+		<Style x:Key="ControlStyle" TargetType="Control">
+			<Setter Property="FontFamily" Value="Segoe UI"/>
+			<Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+		</Style>
+
+		<Style x:Key="TextBlockStyle" TargetType="TextBlock">
+			<Setter Property="FontFamily" Value="Segoe UI"/>
+			<Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+		</Style>
+
+	</Application.Resources>
+</Application>
