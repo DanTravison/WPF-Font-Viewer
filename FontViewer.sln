@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31815.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontViewer", "FontViewer.csproj", "{F83E6887-1E3B-4BAD-838A-59ACEC62ECAE}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FontViewer.Setup", "FontViewer.Setup\FontViewer.Setup.vdproj", "{FA50EEAC-6957-441B-B723-152E488CDD53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{F83E6887-1E3B-4BAD-838A-59ACEC62ECAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F83E6887-1E3B-4BAD-838A-59ACEC62ECAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F83E6887-1E3B-4BAD-838A-59ACEC62ECAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA50EEAC-6957-441B-B723-152E488CDD53}.Debug|Any CPU.ActiveCfg = Debug
+		{FA50EEAC-6957-441B-B723-152E488CDD53}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

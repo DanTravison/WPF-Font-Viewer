@@ -5,3 +5,6 @@
 /.vs
 /obj/Debug/net6.0-windows
 /FontViewer.csproj.user
+/bin
+/FontViewer.Setup/Debug
+/obj
