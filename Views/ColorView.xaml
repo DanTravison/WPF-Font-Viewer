@@ -6,7 +6,7 @@
 		     xmlns:viewmodels="clr-namespace:FontViewer.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400"		 		
-			 d:DataContext="{d:DesignInstance Type=viewmodels:ColorViewModel, IsDesignTimeCreatable=True}"
+			 d:DataContext="{d:DesignInstance Type=viewmodels:ColorsViewModel, IsDesignTimeCreatable=True}"
 		     DataContext="{x:Static viewmodels:Models.Colors}"
 			 >
 
