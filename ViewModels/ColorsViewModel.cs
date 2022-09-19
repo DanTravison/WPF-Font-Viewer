@@ -18,9 +18,10 @@ namespace FontViewer.ViewModels
 			Colors.SelectedItem = NamedColor.Black;
 			Colors.PropertyChanged += OnColorChanged;
 
-			SortNames = new ColorSortOrderList();
-			SortNames.PropertyChanged += OnSortOrderChanged;
-			SortNames.SelectedItem = ColorSortOrder.Name;
+            SortNames = new ColorSortOrderList();
+            SortNames.SelectedItem = ColorSortOrder.Name;
+            SortNames.PropertyChanged += OnSortOrderChanged;
+			
 		}
 
 		#region Properties

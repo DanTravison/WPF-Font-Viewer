@@ -94,7 +94,13 @@ namespace FontViewer.Model
 						break;
 
 					default:
-						result = _comparer.Compare(x.Name, y.Name);
+						int left = x.IsSystemColor ? 1 : 0;
+						int right = y.IsSystemColor ? 1 : 0;
+						result = left - right;
+						if (result == 0)
+						{
+                            result = _comparer.Compare(x.Name, y.Name);
+                        }
 						break;
 				}
 			}

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Media;
 
 namespace FontViewer.Model
@@ -35,8 +36,39 @@ namespace FontViewer.Model
 					list.Add(color);
 				}
 			}
-			list.Sort(NamedColorComparer.Comparers[ColorSortOrder.Name]);
+
+            list.Sort(NamedColorComparer.Comparers[ColorSortOrder.Name]);
+
+			List<NamedColor> systemColors = new List<NamedColor>();
+            foreach (PropertyInfo info in typeof(SystemColors).GetProperties(BindingFlags.Public | BindingFlags.Static))
+			{
+				if (info.PropertyType == typeof(SolidColorBrush))
+				{
+					object? infoValue = info.GetValue(null);
+					if (infoValue is SolidColorBrush brush)
+					{
+                        NamedColor color = new NamedColor(info.Name, brush);
+                        systemColors.Add(color);
+                    }
+				}
+			}
+
+			systemColors.Sort(NamedColorComparer.Comparers[ColorSortOrder.Name]);
+			list.AddRange(systemColors);
+
 			All = list;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of this class.
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="brush">The <see cref="SystemColors"/> property.</param>
+		private NamedColor(string name, SolidColorBrush brush)
+			: this(name, brush.Color)
+		{
+			_brush = brush;
+			IsSystemColor = true;
 		}
 
 		private NamedColor(string name, Color color)
@@ -73,17 +105,22 @@ namespace FontViewer.Model
 		/// <summary>
 		/// Gets the color's Name.
 		/// </summary>
-		public string Name { get; private set; }
+		public string Name { get; }
 
 		/// <summary>
 		/// Gets the color's value.
 		/// </summary>
-		public Color Color { get; private set; }
+		public Color Color { get; }
 
 		/// <summary>
 		/// Gets the ARGB string.
 		/// </summary>
-		public string ARGB { get; private set; }
+		public string ARGB { get; }
+
+		/// <summary>
+		/// Indicates this instance was created from <see cref="SystemColors"/>.
+		/// </summary>
+		public bool	IsSystemColor { get; }
 
 		/// <summary>
 		/// Gets the <see cref="NamedColor"/> instances.
@@ -91,7 +128,6 @@ namespace FontViewer.Model
 		public static IList<NamedColor> All
 		{
 			get;
-			private set;
 		}
 	}
 }

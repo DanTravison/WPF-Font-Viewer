@@ -70,7 +70,7 @@ namespace FontViewer.Model
 
 		#endregion Properties
 
-		#region IDisposable
+		#region IEnumerable
 
 		/// <summary>
 		/// Gets an <see cref="IEnumerator{T}"/>  for enumerating the items in the list.
@@ -90,14 +90,12 @@ namespace FontViewer.Model
 			return _values.GetEnumerator();
 		}
 
-		#endregion IDisposable
+        #endregion IEnumerable
 
-
-		/// <summary>
-		/// Occurs when the collection changes.
-		/// </summary>
-		public event NotifyCollectionChangedEventHandler? CollectionChanged;
-
+        /// <summary>
+        /// Occurs when the collection changes.
+        /// </summary>
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
 
 		#region Cached EventArgs
 
